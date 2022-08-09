@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
 
     def index
-        render plain: "is it working"
+        render :index 
     end
 
 end
