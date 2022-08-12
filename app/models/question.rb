@@ -6,16 +6,18 @@ class Question < ApplicationRecord
 
     def set_aggregates!
         sorted_options = self.options.sort_by {|opt| opt.score} 
-        self.aggregate_1 = sorted_options[0]
-        self.aggregate_2 = sorted_options[1]
-        self.aggregate_3 = sorted_options[2]
-        self.aggregate_4 = sorted_options[3]
-        self.aggregate_5 = sorted_options[4]
-        self.aggregate_6 = sorted_options[5]
-        self.aggregate_7 = sorted_options[6]
-        self.aggregate_8 = sorted_options[7]
-        self.aggregate_9 = sorted_options[8]
-        self.aggregate_10 = sorted_options[9]
+        
+        self.aggregate_1 = sorted_options[0].id
+        self.aggregate_2 = sorted_options[1].id
+        self.aggregate_3 = sorted_options[2].id
+        self.aggregate_4 = sorted_options[3].id
+        self.aggregate_5 = sorted_options[4].id
+        self.aggregate_6 = sorted_options[5].id
+        self.aggregate_7 = sorted_options[6].id
+        self.aggregate_8 = sorted_options[7].id
+        self.aggregate_9 = sorted_options[8].id
+        self.aggregate_10 = sorted_options[9].id
+        self.save!
     end
 
 
