@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  </head>
+
+  <body>
+    <h1> Welcome <%= @user.username%>, </h1>
+    <p>
+      You've succesfully signed up for MyTop10!
+      Visit this link to complete account activation:
+      <a href='<%= activate_users_url(activation_token: @user.activation_token)%>'>Activate</a>
+    </p>
+
+    <p>
+      If the link is not working, copy and paste this URL into your browser:
+      <%= activate_users_url(activation_token: @user.activation_token)%>
+    </p>
+
+    <p>
+      Thanks for joining and have fun ranking!
+    </p>
+  </body>
+</html>

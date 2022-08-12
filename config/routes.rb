@@ -7,5 +7,10 @@ Rails.application.routes.draw do
 
     root "questions#index"
 
+    resource :session, only: [:new, :create, :destroy]
+
+    resources :users, only: [:show, :new, :create] do 
+      get :activate, on: :collection
+    end
 
 end

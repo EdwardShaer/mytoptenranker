@@ -1,0 +1,9 @@
+Welcome to MyTop10 <%= @user.username%>!
+===============================================
+
+You have succesfully signed up!
+Complete acivation by visiting the following link: 
+
+<%= activate_users_url(activation_token: @user.activation_token)%>
+
+Thank you for joining and have fun ranking!
