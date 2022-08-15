@@ -4,6 +4,7 @@ class Ranking < ApplicationRecord
 
     belongs_to :user 
     belongs_to :question
+    delegate :prompt, to: :question, prefix: true 
 
     
     def get_options

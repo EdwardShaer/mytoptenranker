@@ -1,0 +1,13 @@
+<% action_url = ranking.persisted? ? edit_rankings_url(ranking) : rankings_url %>
+<% http_method = ranking.persisted? ? 'PATCH' : 'POST' %>
+
+<form class='form' action='<%= action_url%>' method='POST'>
+    <input type='hidden' name='_method' value='<%= http_method %>'>
+    <input type='hidden' name='authenticity_token' value ='<%= form_authenticity_token%>'>
+
+    <div>
+        <h2 class='page-header'> <%=ranking.prompt%> </h2>
+        <% options.each do |option| %>
+        <%=render 'selector', option_id: option.id, option_name: option.name %> 
+        <% end %>
+    </div>

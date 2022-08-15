@@ -1,0 +1,10 @@
+<h1 class = 'page-header'>User profile</h1>
+
+<p>
+    Username: <%= current_user.username %><br>
+    Email: <%= current_user.email %><br>
+    My Rankings: 
+    <ul> 
+        <%current_user.rankings.each do |ranking| %>
+            <li><a href="<%= ranking_url(ranking)%>"><p><%=Question.find(ranking.question_id).prompt%>
+                

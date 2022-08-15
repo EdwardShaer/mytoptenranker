@@ -1,0 +1,7 @@
+<h1 class='page-heder'> Rank Something! </h1>
+
+<ul class='main-list'>
+    <% @questions.each do |question| %>
+        <li><a href='<%= new_ranking_url(question.id)%>'><p><%= question.prompt%></p></a></li>
+    <%end %>
+</ul>
