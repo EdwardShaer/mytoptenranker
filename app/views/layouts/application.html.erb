@@ -10,10 +10,10 @@
     <%= javascript_importmap_tags %>
     <div class='topnav'>
       <a class="logo" href='#profile'> <%=  image_tag("logos/mytop10.png", size: '60') %> </a>
-      <a class = 'active' href='#home'>Home</a>
+      <a class = 'active' href='/'>Home</a>
       <a href ='#cumulative_rankings'>Cumulative Rankings</a>
       <a href='#rankings/new'>New Ranking</a>
-      <a href='#suggestions/new'>Suggestion</a>
+      <a href='<%= new_suggestion_url%>'>Suggestion</a>
     </div>
   </head>
 

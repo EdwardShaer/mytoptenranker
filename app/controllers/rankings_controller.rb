@@ -12,7 +12,7 @@ class RankingsController < ApplicationController
             end
         end
         if ranking_found
-            redirect_to edit_ranking(params[:id])
+            redirect_to edit_ranking_url(params[:id])
         else
             @ranking = Ranking.new
             render :new

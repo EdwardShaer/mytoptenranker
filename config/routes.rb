@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
     resources :rankings, only: [:show, :create, :destroy, :update, :edit]
 
+    resources :suggestions, only: [:new, :create]
+
     get '/rankings/new/:id', to: 'rankings#new', as: 'new_ranking'
     
 
