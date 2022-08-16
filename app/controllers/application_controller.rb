@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception 
 
-    helper_method :current_user, :current_user_id, :logged_in?
+    helper_method :current_user, :current_user_id, :logged_in?, :prompt
 
     def current_user
         return nil unless session[:session_token]
@@ -22,6 +22,14 @@ class ApplicationController < ActionController::Base
 
     def require_user!
         redirect_to new_session_url if current_user.nil?
+    end
+
+    def prompt 
+        if @question
+            return @question.prompt 
+        elsif @ranking
+            return Question.find(@ranking.question_id).prompt
+        end
     end
 
 end

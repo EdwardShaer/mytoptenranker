@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       get :activate, on: :collection
     end
 
-    resources :rankings, only: [:show, :create, :destroy, :update]
+    resources :rankings, only: [:show, :create, :destroy, :update, :edit]
 
     get '/rankings/new/:id', to: 'rankings#new', as: 'new_ranking'
     

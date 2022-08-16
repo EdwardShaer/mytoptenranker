@@ -4,10 +4,14 @@
 <form class='form' action='<%= action_url%>' method='POST'>
     <input type='hidden' name='_method' value='<%= http_method %>'>
     <input type='hidden' name='authenticity_token' value ='<%= form_authenticity_token%>'>
+    <input type='hidden' name='ranking[question_id]' value ='<%=question.id%>'>
 
-    <div>
-        <h2 class='page-header'> <%=ranking.prompt%> </h2>
+
+    <div class='options-container'>
+        <h2 class='ranking_header'> <%=question.prompt%> </h2>
         <% options.each do |option| %>
         <%=render 'selector', option_id: option.id, option_name: option.name %> 
         <% end %>
+        <br>
+        <input type='submit'>
     </div>

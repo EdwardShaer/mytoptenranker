@@ -1,0 +1,9 @@
+<h1 class='page-header'><%=@user.username%>'s <%=prompt%> Ranking</h1>
+
+<div class='options_container'>
+    <%@ranking.get_options.each_with_index do |option, index| %>
+    <p class='option'> 
+        <%=index + 1%>. <%=option.name%>
+    </p>
+    <%end%>
+</div>
