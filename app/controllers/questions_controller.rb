@@ -5,4 +5,10 @@ class QuestionsController < ApplicationController
         render :index 
     end
 
+    def show
+        @question = Question.find(params[:id])
+        @aggregates = @question.get_aggregates
+        render :show
+    end
+
 end

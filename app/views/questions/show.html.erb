@@ -1,0 +1,11 @@
+<h1 class='page-header'> <%=prompt%> Overall Ranking </h1>
+
+<ol>
+    <% @aggregates.each do |aggregate| %>
+    <li>
+        <p class='option'><%= aggregate.name %></p>
+    </li>
+    <%end%>
+</ol>
+
+<a href='<%=new_ranking_url(@question.id)%>'> Rank <%=prompt%> yourself! </a>

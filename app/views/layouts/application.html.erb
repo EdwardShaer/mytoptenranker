@@ -9,15 +9,14 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <div class='topnav'>
-      <a class="logo" href='#profile'> <%=  image_tag("logos/mytop10.png", size: '60') %> </a>
+      <a class="logo" href='<%=user_url(current_user)%>'> <%=  image_tag("logos/mytop10.png", size: '60') %> </a>
       <a class = 'active' href='/'>Home</a>
-      <a href ='#cumulative_rankings'>Cumulative Rankings</a>
-      <a href='#rankings/new'>New Ranking</a>
-      <a href='<%= new_suggestion_url%>'>Suggestion</a>
+      <a href='<%=rankings_url%>'>New Ranking</a>
+      <a href='<%=new_suggestion_url%>'>Suggestion</a>
     </div>
   </head>
 
-  <body>
+  <body class='body'>
     <%= yield %>
   </body>
 </html>

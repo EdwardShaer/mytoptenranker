@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       get :activate, on: :collection
     end
 
-    resources :rankings, only: [:show, :create, :destroy, :update, :edit]
+    resources :rankings, only: [:index, :create, :destroy, :edit, :update, :show]
 
     resources :suggestions, only: [:new, :create]
 

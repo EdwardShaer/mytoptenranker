@@ -1,10 +1,10 @@
-<% action_url = ranking.persisted? ? edit_rankings_url(ranking) : rankings_url %>
+<% action_url = ranking.persisted? ? ranking_url(ranking) : rankings_url %>
 <% http_method = ranking.persisted? ? 'PATCH' : 'POST' %>
 
 <form class='form' action='<%= action_url%>' method='POST'>
     <input type='hidden' name='_method' value='<%= http_method %>'>
     <input type='hidden' name='authenticity_token' value ='<%= form_authenticity_token%>'>
-    <input type='hidden' name='ranking[question_id]' value ='<%=question.id%>'>
+    <input type='hidden' name='ranking[question_id]' value ='<%=@question.id%>'>
 
 
     <div class='options-container'>
@@ -13,5 +13,14 @@
         <%=render 'selector', option_id: option.id, option_name: option.name %> 
         <% end %>
         <br>
-        <input type='submit'>
+        
     </div>
+
+    <div class='note-form'>
+        <label for='note-box'>Note:</label>
+        <textarea id='note-box' name='ranking[note]' rows='5' cols='50' 
+        placeholder='Explain your picks, or your ranking philosophy, or whatever you want!'></textarea>
+    </div>
+    <input type='submit'>
+</form>
+

@@ -20,5 +20,19 @@ class Question < ApplicationRecord
         self.save!
     end
 
+    #refactor: query db once
+    def get_aggregates
+        return [Option.find(self.aggregate_1),
+            Option.find(self.aggregate_2),
+        Option.find(self.aggregate_3),
+        Option.find(self.aggregate_4),
+        Option.find(self.aggregate_5),
+        Option.find(self.aggregate_6),
+        Option.find(self.aggregate_7),
+        Option.find(self.aggregate_8),
+        Option.find(self.aggregate_9),
+        Option.find(self.aggregate_10)]
+        end
+
 
 end

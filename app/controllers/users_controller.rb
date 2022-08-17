@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
     def show 
+        redirect_to root_url and return if current_user != User.find(params[:id])
+        @rankings = current_user.rankings
         render :show
     end
 

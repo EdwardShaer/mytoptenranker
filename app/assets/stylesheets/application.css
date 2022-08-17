@@ -15,17 +15,18 @@
  */
 
  .topnav {
-     background-color: #333;
+     background-color: yellow;
      overflow: hidden;
      display: flex;
      flex-direction: row;
      justify-content: left;
      align-items: center;
+     
  }
 
  .topnav a {
      float: left;
-     color: #f2f2f2;
+     color: black;
      text-align: center;
      padding: 14px 14px;
      text-decoration: none;
@@ -33,11 +34,22 @@
  }
 
  .topnav a:hover {
-     background-color: #ddd;
+     background-color: red;
      color: black 
  }
 
  .topnav a.active {
-     background-color: #04AA6D;
+     background-color: red;
      color: white;
  }
+
+ .body {
+     background-color: black;
+     color: white 
+ }
+
+ .page-header {
+     color: red;
+ }
+ 
+ 
