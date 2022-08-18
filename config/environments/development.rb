@@ -15,8 +15,15 @@ Rails.application.configure do
   config.consider_all_requests_local = true
 
   #Action mailer
-  config.action_mailer.default_url_options = {host: 'localhost:3000'}
-  config.action_mailer.asset_host = 'http://localhost:3000'
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    port: 587,
+    address: 'smtp.gmail.com',
+    user_name: 'mytop10ranker@gmail.com',
+    password: 'ykpxisxwgfcxzqut',
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
 
   Rails.application.routes.default_url_options[:host] = 'localhost:3000'
 

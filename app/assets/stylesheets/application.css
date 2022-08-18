@@ -43,6 +43,10 @@
      color: white;
  }
 
+ .topnav form {
+     flex: right
+ }
+
  .body {
      background-color: black;
      color: white 
