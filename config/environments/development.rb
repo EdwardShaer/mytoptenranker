@@ -25,7 +25,7 @@ Rails.application.configure do
     enable_starttls_auto: true
   }
 
-  Rails.application.routes.default_url_options[:host] = 'localhost:3000'
+  Rails.application.routes.default_url_options[:host] = 'www.mytoptenranker.com'
 
   # Enable server timing
   config.server_timing = true
