@@ -28,7 +28,7 @@ function sortAndDisable(e) {
     sorted.forEach(ele => {
         //append each sorted item to the ul
         document.querySelector('#options-list').appendChild(ele);
-        other_selector = ele.querySelector('.selector');
+        let other_selector = ele.querySelector('.selector');
         //disable the selected option for other selectors
         if (other_selector !== clicked_selector){
             other_selector.querySelectorAll('option').forEach(opt => {

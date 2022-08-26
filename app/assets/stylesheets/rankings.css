@@ -1,5 +1,5 @@
 .options-container {
-    background-color: lightblue;
+    background-color: grey;
     overflow: hidden;
     display: flex;
     flex-direction: column;

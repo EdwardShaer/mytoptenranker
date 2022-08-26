@@ -79,9 +79,7 @@ class RankingsController < ApplicationController
 
     def destroy
         @ranking = Ranking.find(params[:id])
-        user = User.find(params[:user_id])
-        @ranking.destroy if user.id == @ranking.user_id
-        redirect_to root_url 
+        @ranking.destroy if current_user_id == @ranking.user_id
     end
 
     private

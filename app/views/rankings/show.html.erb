@@ -8,7 +8,8 @@
     <%end%>
     <p class='note'>Note: <%=@ranking.note%></p>
 </div>
-
-<button>
+<%= javascript_include_tag('deleteRanking')%>
+<div id='data-details' data-ranking-id='<%=@ranking.id%>' data-user-id='<%=current_user_id%>'>
+<button onclick='deleteRanking()'>
 Delete this ranking
 </button>
