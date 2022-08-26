@@ -11,7 +11,7 @@
         <h2 class='ranking_header'> <%=question.prompt%> </h2>
         <ul id='options-list'>
             <% options.each do |option| %>
-                <li class='list-item' onchange='sortSelectors()'>
+                <li class='list-item' onchange= 'sortAndDisable(event)'>
                 <%=render 'selector', option_id: option.id, option_name: option.name %>
                 </li> 
             <% end %>

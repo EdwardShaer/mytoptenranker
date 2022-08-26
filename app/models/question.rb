@@ -23,7 +23,7 @@ class Question < ApplicationRecord
     #refactor: query db once
     def get_aggregates
         return [Option.find(self.aggregate_1),
-            Option.find(self.aggregate_2),
+        Option.find(self.aggregate_2),
         Option.find(self.aggregate_3),
         Option.find(self.aggregate_4),
         Option.find(self.aggregate_5),

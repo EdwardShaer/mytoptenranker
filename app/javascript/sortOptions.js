@@ -18,12 +18,26 @@ function comparator(a, b) {
    
 }
 
-function sortSelectors(e) {
+function sortAndDisable(e) {
+    clicked_selector = e.currentTarget.querySelector('.selector');
+    clicked_value = clicked_selector.value;
     var selectors = document.querySelectorAll('.list-item');
-    console.log(selectors)
     var selectorsArray = Array.from(selectors);
     let sorted = selectorsArray.sort(comparator);
-    console.log(sorted);
     
-    sorted.forEach(ele => document.querySelector('#options-list').appendChild(ele));
-}
+    sorted.forEach(ele => {
+        //append each sorted item to the ul
+        document.querySelector('#options-list').appendChild(ele);
+        other_selector = ele.querySelector('.selector');
+        //disable the selected option for other selectors
+        if (other_selector !== clicked_selector){
+            other_selector.querySelectorAll('option').forEach(opt => {
+                if (opt.value === clicked_value){
+                opt.disabled = true;
+                }
+            })
+        }
+    });
+};
+
+        
