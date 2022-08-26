@@ -8,25 +8,23 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    
+    
     <div class='topnav'>
       <%logo_url = logged_in? ? user_url(current_user) : new_session_url%>
-      <a class="logo" href='<%=logo_url%>'> <%=image_tag("logos/mytop10.png", size: '60') %> </a>
-      <a class = 'active' href='/'>Home</a>
-      <a href='<%=rankings_url%>'>New Ranking</a>
-      <a href='<%=new_suggestion_url%>'>Suggestion</a>
-      <%if logged_in?%>
-        <form class = 'sign-in-out' action='session_url' method='POST'>
-          <input type='hidden' name='_method'value='DELETE'>
-          <input type='hidden' name='authenticity_token' value ='<%= form_authenticity_token%>'>
-          <input type='submit' value='Sign-out'>
-        </form>
-      <%else%>
-        <a href='<%=new_session_url%>'> Sign-in</a>
-      <%end%>     
+
+      <div><a class="logo" href='<%=logo_url%>'> <%=image_tag("logos/mytop10.png", size: '60') %> </a></div>
+      <div><a class = 'active' href='/'>Home</a></div>
+      <div><a href='<%=rankings_url%>'>New Ranking</a></div>
+      <div><a href='<%=new_suggestion_url%>'>Suggestion</a></div>
+      <%button_text = logged_in? ? 'Sign out' : 'Sign in'%>
+      <div><input id='sign_in_out' type='button' value='<%=button_text%>'></div>
     </div>
   </head>
 
   <body class='body'>
+  <%=javascript_include_tag "signToggle"%>
     <%= yield %>
+    
   </body>
 </html>

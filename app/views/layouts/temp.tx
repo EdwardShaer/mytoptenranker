@@ -1,0 +1,8 @@
+div class='navbar-element' id='sign-in-or-out'>
+        <%if logged_in?%>
+          <button> Sign out </button>
+        <%else %>
+          <button> Sign in or create account <button>
+        <%end%>
+      
+    </div>
