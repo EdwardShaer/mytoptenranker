@@ -21,9 +21,6 @@ gem 'bcrypt', '~> 3.1.7'
 #Use pry in console
 gem 'pry-rails', :group => :development 
 
-#jquery not included by default, so include it
-gem 'jquery-rails'
-
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
 
