@@ -56,9 +56,15 @@
      color: black;
  }
 
- aside {
-     background-color: black;
-     padding-bottom: 6px;
+ #banner-barrier {
+     height: 20px;
+     width: 100%;
+     
+     outline: thin solid black;
+     position: relative;
+     background: linear-gradient(to left, gold, black) right;
+     
+    
  }
  
  

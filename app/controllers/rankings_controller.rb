@@ -60,8 +60,11 @@ class RankingsController < ApplicationController
         if @ranking.save 
             @ranking.add_new_rank_counts
             question.set_aggregates!
+            old_ranking.destroy
             redirect_to ranking_url(@ranking)
         else
+            old_ranking.add_new_rank_counts
+            question.set_aggregates!
             flash.now[:errors] = @ranking.errors.full_messages
             @question = Question.find(question_id_from_params)
             @options = @question.options
@@ -72,14 +75,18 @@ class RankingsController < ApplicationController
     def edit
         @ranking = Ranking.find_by(user_id: current_user_id, question_id: params[:id])
         @question = Question.find(params[:id])
-        @question.set_aggregates!
         @options = @question.options
         render :edit 
     end
 
     def destroy
         @ranking = Ranking.find(params[:id])
-        @ranking.destroy if current_user_id == @ranking.user_id
+        @question = Question.find(@ranking.question_id)
+        if current_user_id == @ranking.user_id
+            @ranking.subtract_old_rank_counts
+            @ranking.destroy
+            @question.set_aggregates!
+        end
     end
 
     def recent
