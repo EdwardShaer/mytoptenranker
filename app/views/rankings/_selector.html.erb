@@ -1,5 +1,5 @@
 
-<select class='selector' name='ranking_hash[<%=option_id%>]' id='<%=option_id%>'>
+<select class='selector' name='ranking_hash[<%=option_id%>]' onfocus='savePreviousValue(event)' id='<%=option_id%>'>
     <option selected value='nil'> </option>
     <%= render 'options' %>
 </select>
