@@ -1,0 +1,9 @@
+<h1 class='page-header'> Recent Rankings </h1>
+<ul class='main-list'>
+    <%@id_user_rankings.each do |ranking|%>
+    <li>
+        <a href='<%=ranking_url(ranking[:rank_id])%>'> <%=ranking[:username]%>'s <%=ranking[:prompt]%> Ranking</a>
+    </li>
+    <br>
+    <%end%>
+</ul>

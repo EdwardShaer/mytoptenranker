@@ -82,6 +82,17 @@ class RankingsController < ApplicationController
         @ranking.destroy if current_user_id == @ranking.user_id
     end
 
+    def recent
+        rankings = Ranking.by_recently_updated.limit(15)
+        @id_user_rankings = []
+        rankings.each do |ranking|
+            username = User.find(ranking.user_id).username
+            prompt = Question.find(ranking.question_id).prompt 
+            @id_user_rankings.append({rank_id: ranking.id, username: username, prompt: prompt})
+        end
+        render :recent 
+    end
+
     private
 
     def ranking_params

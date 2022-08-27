@@ -15,7 +15,6 @@ function comparator(a, b) {
     if (aVal < bVal)
         return -1;
     return 0;
-   
 }
 
 function sortAndDisable(e) {

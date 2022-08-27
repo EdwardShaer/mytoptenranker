@@ -15,7 +15,7 @@
  */
 
  .topnav {
-     background-color: yellow;
+     background-color: white;
      overflow: hidden;
      display: flex;
      flex-direction: row;
@@ -34,7 +34,7 @@
  }
 
  .topnav a:hover {
-     background-color: red;
+     background-color: gold;
      color: black 
  }
 
@@ -48,12 +48,17 @@
  }
 
  .body {
-     background-color: black;
-     color: white 
+     background-color: white;
+     color: black
  }
 
  .page-header {
-     color: red;
+     color: black;
+ }
+
+ aside {
+     background-color: black;
+     padding-bottom: 6px;
  }
  
  

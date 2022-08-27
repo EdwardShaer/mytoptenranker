@@ -1,5 +1,5 @@
 class Ranking < ApplicationRecord
-
+    include OrderableByTimestamp
     validates :user_id, :question, presence: true
 
     belongs_to :user 

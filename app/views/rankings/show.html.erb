@@ -9,7 +9,7 @@
     <p class='note'>Note: <%=@ranking.note%></p>
 </div>
 <%= javascript_include_tag('deleteRanking')%>
-<div id='data-details' data-ranking-id='<%=@ranking.id%>' data-user-id='<%=current_user_id%>'>
+<div id='data-details' data-ranker-id='<%=@ranking.user_id%>' data-ranking-id='<%=@ranking.id%>' data-user-id='<%=current_user_id%>'>
 <button onclick='deleteRanking()'>
 Delete this ranking
 </button>
