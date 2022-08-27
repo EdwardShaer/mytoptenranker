@@ -124,7 +124,7 @@ class RankingsController < ApplicationController
     end
 
     def get_ranking_hash
-        params.require(:ranking_hash).permit('1','2','3','4','5','6','7','8','9','10', 'll', '12',
-        '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24').to_h
+        nums = (1..500).to_a.map {|ele| ele.to_s}
+        params.require(:ranking_hash).permit(*nums).to_h
     end
 end
