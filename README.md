@@ -30,15 +30,15 @@ ActiveSupport::Concern:
 
 In app/assets/models/concern, I wrote a module that extends ActiveSupport::Concern, which facilitates searching the database by timestamp. I then simply call by_recently_created to get the most recently created rankings. I also have a by_recently_updated option in case I want to include edited rankings on the recent rankings page. These functions will help keep code DRY if ever I need to query the database based on timestamp again. 
 
-Views
+Views:
 
-The views all rely on embedded ruby to dynamically generate html. A layout file holds the same header for all views. Many also rely on partials to keep code DRY, particularly in the views/rankings folder. The forms for submitting rankings are generated in the _form partial, which renders the _selector partial several times with a ruby loop. Each _selector partial renders the _options partial. 
+The views all rely on embedded ruby to dynamically generate html. A layout file holds the same header for all views. Many also rely on partials to keep code DRY, particularly in the views/rankings folder. The forms for submitting rankings are generated in the _form partial, which renders the _selector partial several times with an erb loop. Each _selector partial renders the _options partial. 
 
 Data is kept in the views to be sent in parameters to the server and accessed by javascript on the client side. For example, each select element holds a reference to the option it represents.  
 
 Helper functions are used throughout the views. They are defined in ApplicationController.
 
-Javascript
+Javascript:
 
 The client-side code uses Vanilla DOM manipulation. I was using jQuery until it was brought to my attention that jQuery is essentially obsolete and is not generally recommended for new projects. The choice to exclude jQuery also required the use of XMLHttpRequests in place of ajax. My front-end code has a smaller footprint as a result. 
 
@@ -46,6 +46,9 @@ app/assets/javascript/sortOptions.js is a file that controls the UI while a user
 
 The javascript_include_tag is used to link the scripts to the views. 
 
+Testing:
+
+The rspec gem is used for testing. Rspec is configured in the .rspec configuration file and spec directory. The test files use rspec-helper and rails-helper to define unit tests. Although my 40 unit tests do not comprehensively test all of the application's functionality, I hope they are sufficient to demonstrate my ability to write unit tests and use Rspec within Rails. 
 
 
 

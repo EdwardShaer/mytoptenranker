@@ -3,3 +3,5 @@ FactoryBot.define do
         email {Faker::Internet.email}
         password {Faker::Internet.password}
         username {Faker::Internet.username}
+    end
+end
