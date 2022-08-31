@@ -3,6 +3,7 @@
 <div class='options_container'>
     <%@ranking.get_options.each_with_index do |option, index| %>
     <p class='option'> 
+        <%= image_tag(option.image, size: '60x60')%>
         <%=index + 1%>. <%=option.name%>
     </p>
     <%end%>
