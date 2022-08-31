@@ -2,7 +2,8 @@ class RankingsController < ApplicationController
     before_action :require_user!
 
     def index
-        @questions = Question.all 
+        #get questions in random order
+        @questions = Question.all.to_a.shuffle
         render :index 
     end
 

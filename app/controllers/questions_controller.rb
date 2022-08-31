@@ -1,7 +1,8 @@
 class QuestionsController < ApplicationController
 
     def index
-        @questions = Question.all 
+        #randomize the order the questions appear in on index page
+        @questions = Question.all.to_a.shuffle 
         render :index 
     end
 
