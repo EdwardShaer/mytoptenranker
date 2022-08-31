@@ -13,7 +13,7 @@
     <div class='topnav'>
       <%logo_url = logged_in? ? user_url(current_user) : new_session_url%>
 
-      <div><a class="logo" href='<%=logo_url%>'> <%=image_tag("logos/mytop10", size: "250x100")%> </a></div>
+      <div><a class="logo" href='<%=logo_url%>'> <%=image_tag("logos/mytop10.png", size: "250x100")%> </a></div>
       <div><a href='/'>Home</a></div>
       <div><a href='<%=rankings_url%>'>Make Ranking</a></div>
       <div><a href='<%=recent_rankings_url%>'>Recent Rankings</a></div>
