@@ -1,15 +1,18 @@
-const liArray = Array.from(document.getElementsByTagName('LI'));
-const imgArray = Array.from(document.body.querySelector('ul').getElementsByTagName('IMG'));
+liArray = Array.from(document.getElementsByTagName('LI'));
+imgArray = Array.from(document.body.querySelector('ul').getElementsByTagName('IMG'));
 imgArray.forEach((img) => {
     img.style.display = 'none'
 });
-let img_index = 0;
+
+    
 
 
 change();
 
-function change() {
+function change(img_index = 0) {
     liArray.forEach(li => {
+
+        page_reached = true;
      
         let canvas = li.querySelector('.canvas');
 
@@ -25,8 +28,8 @@ function change() {
         ctx.drawImage(img, x, y, img.width * scale, img.height * scale);
         
         //shift to next image for next change
-        img_index = (img_index + 1) % 3;
+        
     });
-    //call change every second 
-    setTimeout(change, 1000);
+    //call change every 1.5 seconds
+    setTimeout(change, 1500, (img_index + 1) % 3);
 }
