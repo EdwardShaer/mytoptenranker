@@ -3,7 +3,10 @@
 <ol>
     <% @aggregates.each do |aggregate| %>
     <li>
-        <p class='option'><%= aggregate.name %></p>
+        <p>
+        <%= image_tag(aggregate.image, size: '60x60') %>
+        <%= aggregate.name %>
+        </p>
     </li>
     <%end%>
 </ol>

@@ -12,6 +12,7 @@
         <ul id='options-list'>
             <% options.each do |option| %>
                 <li class='list-item' onchange= 'sortAndDisable(event)'>
+                <%= image_tag(option.image, size: "60x60")%>
                 <%=render 'selector', option_id: option.id, option_name: option.name %>
                 </li> 
             <% end %>
