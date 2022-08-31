@@ -2,6 +2,16 @@
 
 <ul class='main-list'>
     <% @questions.each do |question| %>
-        <li><a href='<%=question_url(question.id)%>'><p><%= question.prompt%></p></a>
-    <%end %>
+        <%three_images = question.three_random_images%>
+        <li class='category'>
+            <%three_images.each do |image|%>
+                <%= image_tag(image, size: '70x70') %>
+            <% end %>
+            <canvas class='canvas' width=70 height=70></canvas>
+            <a href='<%=question_url(question.id)%>'><p><%= question.prompt%></p></a>
+            
+        </li>
+    <% end %>
 </ul>
+
+<%=javascript_include_tag 'canvasShift'%>

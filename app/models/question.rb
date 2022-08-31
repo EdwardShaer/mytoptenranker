@@ -32,7 +32,13 @@ class Question < ApplicationRecord
         Option.find(self.aggregate_8),
         Option.find(self.aggregate_9),
         Option.find(self.aggregate_10)]
-        end
+    end
 
+    def three_random_images
+        #three random options
+        options = self.options.to_a.sample(3)
+        #return array of the image srcs"
+        options.map! {|opt| opt.image}
+    end
 
 end

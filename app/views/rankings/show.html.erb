@@ -1,13 +1,14 @@
 <h1 class='page-header'><%=@user.username%>'s <%=prompt%> Ranking</h1>
 
 <div class='options_container'>
+    <p class='note'>Note: <%=@ranking.note%></p>
     <%@ranking.get_options.each_with_index do |option, index| %>
     <p class='option'> 
         <%= image_tag(option.image, size: '60x60')%>
         <%=index + 1%>. <%=option.name%>
     </p>
     <%end%>
-    <p class='note'>Note: <%=@ranking.note%></p>
+    
 </div>
 <%= javascript_include_tag('deleteRanking')%>
 <div id='data-details' data-ranker-id='<%=@ranking.user_id%>' data-ranking-id='<%=@ranking.id%>' data-user-id='<%=current_user_id%>'>
