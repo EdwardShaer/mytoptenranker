@@ -8,6 +8,7 @@ class QuestionsController < ApplicationController
 
     def show
         @question = Question.find(params[:id])
+        @question.set_aggregates!
         @aggregates = @question.get_aggregates
         render :show
     end
