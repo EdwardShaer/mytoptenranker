@@ -21,6 +21,6 @@ Rails.application.routes.draw do
 
     get '/recentrankings', to: 'rankings#recent', as: 'recent_rankings'
     
-
+    get '/.well-known/pki-validation/61B0A4B25ABBB8CB75F19A988BC1EF96.txt', to: 'application#prove'
 
 end

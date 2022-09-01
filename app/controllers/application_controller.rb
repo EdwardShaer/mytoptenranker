@@ -32,6 +32,10 @@ class ApplicationController < ActionController::Base
         end
     end
 
+    def prove
+        render file: "#{Rails.root}/61B0A4B25ABBB8CB75F19A988BC1EF96.txt", layout: false 
+    end
+
     
 
 end
