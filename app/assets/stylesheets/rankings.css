@@ -1,8 +1,13 @@
 .options-container {
-    background-color: gold;
+    background: linear-gradient(to left, gold, black) right;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: left;
     align-items: center;
+    
+}
+
+ul {
+    list-style: none;
 }
