@@ -19,8 +19,8 @@ class UsersController < ApplicationController
             redirect_to new_session_url
         
         else
-            flash.now[:errors] = @user.errors.full_messages
-            render :new
+            flash.now[:errors] = 'Password must be at least 6 characters, email must be valid email address'
+            render :new, status: :unprocessable_entity
         end
     end
 

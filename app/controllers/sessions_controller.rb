@@ -11,13 +11,13 @@ class SessionsController < ApplicationController
         )
 
         if user.nil?
-            flash.now[:errors] = ["Invalid username or password"]
-            render :new
+            flash.now[:errors] = "Invalid username or password"
+            render :new, status: :unprocessable_entity
         
-        #activate? method supplied by rails because a column matches the name
+        #activated? method supplied by rails because a column matches the name
         elsif !user.activated?
-            flash.now[:errors] = ["Please check your email to activate your account!"]
-            render :new
+            flash.now[:errors] = "Please check your email to activate your account!"
+            render :new, status: :unprocessable_entity
         
         else
             login_user!(user)

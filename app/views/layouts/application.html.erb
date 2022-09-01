@@ -23,9 +23,21 @@
       <div><input id='sign_in_out' type='button' value='<%=button_text%>'></div>
     </div>
     <div id='banner-barrier'></div>
+    <% if flash.now[:errors] %>
+      <div class='errors-banner'>
+        <%= flash.now[:errors] %> 
+      </div>
+    <%end%>
+
+    <% if flash[:notice] %>
+      <div class='notice-banner'>
+        <%= flash[:notice] %> 
+      </div>
+    <%end%>
   </head>
 
   <body class='body'>
+  
   <%=javascript_include_tag "signToggle"%>
     <%= yield %>
     

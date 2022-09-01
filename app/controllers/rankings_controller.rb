@@ -43,7 +43,7 @@ class RankingsController < ApplicationController
             flash.now[:errors] = @ranking.errors.full_messages
             @question = Question.find(question_id_from_params)
             @options = @question.options
-            render :new 
+            render :new, status: :unprocessable_entity
         end
     end
 

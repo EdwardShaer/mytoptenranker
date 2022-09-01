@@ -1,5 +1,6 @@
 class SuggestionsController < ApplicationController
-
+    before_action :require_user!
+    
     def new
         render :new
     end
@@ -11,8 +12,8 @@ class SuggestionsController < ApplicationController
         if suggestion.save
             redirect_to root_url 
         else
-            flash[:errors] = suggestion.errors.full_messages
-            render :new
+            flash.now[:errors] = suggestion.errors.full_messages[0]
+            render :new, status: :unprocessable_entity
         end
     end
 

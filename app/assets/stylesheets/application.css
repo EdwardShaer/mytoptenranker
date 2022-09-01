@@ -83,6 +83,14 @@
      margin: 10px;
 
  }
+
+.errors-banner {
+     background-color: red;
+ }
+
+ .notice-banner {
+     background-color: blue;
+ }
  
  /* ul {
      box-decoration-break: clone;
