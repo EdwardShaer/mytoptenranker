@@ -6,6 +6,7 @@ class Question < ApplicationRecord
 
     def set_aggregates!
         sorted_options = self.options.sort_by {|opt| opt.score} 
+        sorted_options = sorted_options.to_a.reverse
         
         self.aggregate_1 = sorted_options[0].id
         self.aggregate_2 = sorted_options[1].id
