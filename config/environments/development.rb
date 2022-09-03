@@ -20,7 +20,7 @@ Rails.application.configure do
     port: 587,
     address: 'smtp.gmail.com',
     user_name: 'mytop10ranker@gmail.com',
-    password: 'ykpxisxwgfcxzqut',
+    password: '##############',
     authentication: :plain,
     enable_starttls_auto: true
   }
